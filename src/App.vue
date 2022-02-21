@@ -1,6 +1,6 @@
 <template>
     <div>
-        app-{{$store.state.count}} -{{$store.getters.getCount}}
+        app-{{$store.state.gadVal}}-{{$store.state.count}} -{{$store.getters.getCount}}
         <button @click="clickEvent">commit</button>
         <!--<button @click="clickEvent2">dispatch</button>-->
         <child></child>
@@ -14,7 +14,7 @@
         components: {Child},
         methods: {
             clickEvent() {
-                this.$store.state.count = 10
+                this.$store.state.gadVal += 10
             },
             /*clickEvent2() {
                 this.$store.dispatch('incrementAsync')

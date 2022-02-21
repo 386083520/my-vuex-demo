@@ -6,10 +6,12 @@ Vue.use(MyVuex)
 
 const store = new MyVuex.Store({
     state: {
-        count: 0
+        count: 0,
+        gadVal: 1
     },
     getters: {
         getCount: state => {
+            console.log('gsdgetCount')
             return state.count * 2
         }
     },
