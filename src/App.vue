@@ -1,6 +1,6 @@
 <template>
     <div>
-        app-{{$store.state.count}}<!-- -{{$store.getters.getCount}}-->
+        app-{{$store.state.count}} -{{$store.getters.getCount}}
         <button @click="clickEvent">commit</button>
         <!--<button @click="clickEvent2">dispatch</button>-->
         <child></child>
