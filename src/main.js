@@ -27,7 +27,8 @@ const store = new MyVuex.Store({
     }
 })
 
-new Vue({
+let app = new Vue({
     store,
     render: h => h(App)
 }).$mount('#app')
+console.log('gsdapp', app.$store)

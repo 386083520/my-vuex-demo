@@ -16,6 +16,9 @@
             clickEvent2() {
                 this.$store.dispatch('incrementAsync')
             }*/
+        },
+        mounted() {
+            console.log('gsdApp', this.$store)
         }
     }
 </script>
