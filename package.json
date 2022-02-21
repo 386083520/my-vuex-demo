@@ -1,0 +1,25 @@
+{
+  "name": "my-vuex-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vue-cli-service serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/386083520/my-vuex-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/386083520/my-vuex-demo/issues"
+  },
+  "homepage": "https://github.com/386083520/my-vuex-demo#readme",
+  "dependencies": {
+    "@vue/cli-service": "~4.5.0",
+    "vue-template-compiler": "^2.6.11",
+    "vue": "^2.6.11"
+  }
+}
