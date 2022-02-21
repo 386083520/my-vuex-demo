@@ -19,7 +19,8 @@
   "homepage": "https://github.com/386083520/my-vuex-demo#readme",
   "dependencies": {
     "@vue/cli-service": "~4.5.0",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
-    "vue": "^2.6.11"
+    "vuex": "^3.6.2"
   }
 }
