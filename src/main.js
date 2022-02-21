@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import App from "./App";
 import Vuex from 'vuex'
-Vue.use(Vuex)
+import MyVuex from 'my-vuex'
+Vue.use(MyVuex)
 
-const store = new Vuex.Store({
+const store = new MyVuex.Store({
     state: {
         count: 0
     },
