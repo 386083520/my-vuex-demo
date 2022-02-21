@@ -1,19 +1,22 @@
 <template>
     <div>
-        <!--app-{{$store.state.count}}-{{$store.getters.getCount}}
+        app-{{$store.state.count}}<!-- -{{$store.getters.getCount}}-->
         <button @click="clickEvent">commit</button>
-        <button @click="clickEvent2">dispatch</button>-->
+        <!--<button @click="clickEvent2">dispatch</button>-->
+        <child></child>
     </div>
 </template>
 
 <script>
+    import Child from "./Child";
     export default {
         name: "App",
+        components: {Child},
         methods: {
-            /*clickEvent() {
-                this.$store.commit('increment')
+            clickEvent() {
+                this.$store.state.count = 10
             },
-            clickEvent2() {
+            /*clickEvent2() {
                 this.$store.dispatch('incrementAsync')
             }*/
         },
