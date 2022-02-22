@@ -85,10 +85,10 @@ const store = new MyVuex.Store({
         gadVal: 1
     },
     getters: {
-        getCount: state => {
+        /*getCount: state => {
             console.log('gsdgetCount')
             return state.count * 2
-        }
+        }*/
     },
     mutations: {
         increment (state) {
