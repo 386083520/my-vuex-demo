@@ -23,12 +23,12 @@ const moduleA = {
                 commit('increment')
             }
         },
-        incrementAsync ({ commit }) {
+        /*incrementAsync ({ commit }) {
             setTimeout(() => {
-                console.log('gsd2')
+                console.log('gsdaction2')
                 commit('increment')
             }, 1000)
-        }
+        }*/
     },
     getters: {
         getCount (state, getters, rootState) {
@@ -44,8 +44,8 @@ const moduleA = {
                 count: 1000
             },
             getters: {
-                getCount3: (state, getters, rootState) => {
-                    console.log('gsdgetCount3', state, getters, rootState)
+                getCount3: (state, getters, rootState, rootGetters) => {
+                    console.log('gsdgetCount3', state, getters, rootState, rootGetters)
                     return rootState.a.count * 2
                 }
             },
@@ -55,7 +55,14 @@ const moduleA = {
                     state.count++
                 }
             },
-            actions: {}
+            actions: {
+                incrementAsync ({ dispatch, commit, getters, rootGetters }) {
+                    setTimeout(() => {
+                        console.log('gsdaction3')
+                        commit('increment', null, { root: true })
+                    }, 1000)
+                }
+            }
         }
     }
 }
