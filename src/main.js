@@ -40,6 +40,7 @@ const moduleA = {
     },
     modules: {
         b: {
+            namespaced: true,
             state: {
                 count: 1000
             },
