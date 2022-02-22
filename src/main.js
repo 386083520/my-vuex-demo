@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from "./App";
 import Vuex from 'vuex'
-/*import MyVuex from 'my-vuex'*/
-Vue.use(Vuex)
+import MyVuex from 'my-vuex'
+Vue.use(MyVuex)
 
 const moduleA = {
     namespaced: true,
@@ -62,12 +62,24 @@ const moduleA = {
                         commit('increment', null, { root: true })
                     }, 1000)
                 }
+            },
+            modules: {
+                c: {
+                    state: {
+                        count: 1000
+                    }
+                },
+                c1: {
+                    state: {
+                        count: 1000
+                    }
+                }
             }
         }
     }
 }
 
-const store = new Vuex.Store({
+const store = new MyVuex.Store({
     state: {
         count: 0,
         gadVal: 1
