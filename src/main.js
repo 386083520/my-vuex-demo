@@ -1,10 +1,66 @@
 import Vue from 'vue'
 import App from "./App";
 import Vuex from 'vuex'
-import MyVuex from 'my-vuex'
-Vue.use(MyVuex)
+/*import MyVuex from 'my-vuex'*/
+Vue.use(Vuex)
 
-const store = new MyVuex.Store({
+const moduleA = {
+    namespaced: true,
+    state: () => ({
+        count: 100,
+        countA: 101
+    }),
+    mutations: {
+        increment (state) {
+            // 这里的 `state` 对象是模块的局部状态
+            console.log('gsd2')
+            state.count++
+        }
+    },
+    actions: {
+        incrementIfOddOnRootSum ({ state, commit, rootState }) {
+            if ((state.count + rootState.count) % 2 === 1) {
+                commit('increment')
+            }
+        },
+        incrementAsync ({ commit }) {
+            setTimeout(() => {
+                console.log('gsd2')
+                commit('increment')
+            }, 1000)
+        }
+    },
+    getters: {
+        getCount (state, getters, rootState) {
+            return state.count * 2
+        },
+        sumWithRootCount (state, getters, rootState) {
+            return state.count + rootState.count
+        }
+    },
+    modules: {
+        b: {
+            state: {
+                count: 1000
+            },
+            getters: {
+                getCount3: (state, getters, rootState) => {
+                    console.log('gsdgetCount3', state, getters, rootState)
+                    return rootState.a.count * 2
+                }
+            },
+            mutations: {
+                increment (state) {
+                    console.log('gsd3')
+                    state.count++
+                }
+            },
+            actions: {}
+        }
+    }
+}
+
+const store = new Vuex.Store({
     state: {
         count: 0,
         gadVal: 1
@@ -23,9 +79,13 @@ const store = new MyVuex.Store({
     actions: {
         incrementAsync ({ commit }) {
             setTimeout(() => {
+                console.log('gsd1')
                 commit('increment')
             }, 1000)
         }
+    },
+    modules: {
+        a: moduleA
     }
 })
 
