@@ -21,7 +21,8 @@
         components: {Child},
         methods: {
             clickEvent() {
-                this.$store.state.gadVal += 10
+                // this.$store.state.gadVal += 10
+                this.$store.commit('increment')
             },
             clickEvent2() {
                 this.$store.dispatch('a/incrementAsync')
