@@ -5,7 +5,6 @@ import MyVuex from 'my-vuex'
 Vue.use(MyVuex)
 
 const moduleA = {
-    namespaced: true,
     state: () => ({
         count: 100,
         countA: 101
@@ -32,6 +31,7 @@ const moduleA = {
     },
     getters: {
         getCount (state, getters, rootState) {
+            console.log('gsdstate666', state)
             return state.count * 2
         },
         sumWithRootCount (state, getters, rootState) {
@@ -40,7 +40,6 @@ const moduleA = {
     },
     modules: {
         b: {
-            namespaced: true,
             state: {
                 count: 1000
             },
