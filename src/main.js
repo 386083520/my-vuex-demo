@@ -81,7 +81,7 @@ const moduleA = {
 
 const store = new MyVuex.Store({
     state: {
-        count: 0,
+        count: 1,
         gadVal: 1
     },
     getters: {

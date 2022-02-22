@@ -1,16 +1,16 @@
 <template>
     <div>
-        <!--app-{{$store.state.gadVal}}-{{$store.state.count}} -{{$store.getters.getCount}}
-        <div>
+        app-{{$store.state.gadVal}}-{{$store.state.count}} -{{$store.getters.getCount}}
+        <!--<div>
             app-{{$store.getters['a/getCount']}}
-        </div>
+        </div>-->
         <div>
             app-{{$store.state.a.b.count}}
         </div>
         <button @click="clickEvent">commit</button>
         <button @click="clickEvent2">dispatch</button>
         <button @click="clickEvent3">event</button>
-        <child></child>-->
+        <child></child>
     </div>
 </template>
 
